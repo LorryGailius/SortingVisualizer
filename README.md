@@ -1,3 +1,8 @@
+# Sorting Visualizer
+Sorting visualizer made with [React](https://reactjs.org/)
+
+Can also be accessed through [Github pages](https://lorrygailius.github.io/SortingVisualizer/)
+
 ## Available Scripts
 
 In the project directory, you can run:
