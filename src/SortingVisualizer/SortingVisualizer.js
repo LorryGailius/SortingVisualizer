@@ -99,18 +99,22 @@ export default class SortingVisualizer extends React.Component {
     for (let i = 0; i < n; i++) {
       const bars = document.getElementsByClassName("array-bar");
       bars[i].classList.add("compare-val");
-      let lowest = i
+      let lowest = i, min_idx = -1;
       for (let j = i + 1; j < n; j++) {
         if (array[j] < array[lowest]) {
+          if (min_idx !== -1) {
+            bars[min_idx].classList.remove("compare-val", "higher-val", "lower-val");
+          }
           lowest = j;
           bars[j].classList.add("lower-val");
+          min_idx = j;
         }
         else {
           bars[j].classList.add("higher-val");
         }
         await sleep(calcSpeedMs(this.props.speed));
 
-        bars[j].classList.remove("compare-val", "higher-val", "lower-val");
+        bars[j].classList.remove("compare-val", "higher-val");
       }
       if (lowest !== i) {
         ;[array[i], array[lowest]] = [array[lowest], array[i]]
@@ -118,6 +122,7 @@ export default class SortingVisualizer extends React.Component {
       this.setState({ array: array });
 
       bars[i].classList.remove("compare-val", "higher-val", "lower-val");
+      bars[min_idx].classList.remove("compare-val", "higher-val", "lower-val");
     }
     this.checkSort();
   }
