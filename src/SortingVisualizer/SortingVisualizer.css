@@ -1,0 +1,45 @@
+.array-bar {
+    display: inline-block;
+    background-color: #7f8ca6;
+    bottom: 0;
+    margin: 0 1px;
+}
+
+.array-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 10% 5% 10%;
+}
+
+.array-bar span {
+    position: absolute;
+    transform: translate(-50%, 0);
+    margin: 0 0 5px 0;
+    bottom: 0;
+}
+
+.compare-val {
+    display: inline-block;
+    background-color: rgb(65, 105, 225);
+    bottom: 0;
+    margin: 0 1px;
+    font: bold;
+}
+
+.higher-val {
+    display: inline-block;
+    background-color: rgb(202, 87, 87);
+    bottom: 0;
+    margin: 0 1px;
+    font: bold;
+}
+
+.lower-val {
+    display: inline-block;
+    background-color: rgb(85, 153, 85);
+    bottom: 0;
+    margin: 0 1px;
+    font: bold;
+}

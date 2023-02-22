@@ -1,5 +1,10 @@
+body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -35,4 +40,19 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.sliders {
+  width: fit-content;
+  margin: 0 2rem -0.5rem 2rem;
+  width: 10%;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-width: 1px !important;
+  border-color: #1565c0 !important;
+}
+
+.MuiInputLabel-root.Mui-focused{
+  color: #1565c0 !important; /* change the color of the focused label */
 }
