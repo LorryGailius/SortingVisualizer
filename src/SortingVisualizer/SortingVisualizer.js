@@ -127,6 +127,33 @@ export default class SortingVisualizer extends React.Component {
     this.checkSort();
   }
 
+  async bozoSort() {
+    const { array } = this.state;
+    const n = array.length;
+    let isSorted = false;
+    while (!isSorted) {
+      const bars = document.getElementsByClassName("array-bar");
+      const i = randomIntFromInterval(0, n - 1);
+      const j = randomIntFromInterval(0, n - 1);
+      bars[i].classList.add("compare-val");
+      bars[j].classList.add("compare-val");
+      if (array[i] > array[j]) {
+        ;[array[i], array[j]] = [array[j], array[i]]
+      }
+      this.setState({ array: array });
+      await sleep(calcSpeedMs(this.props.speed));
+      bars[i].classList.remove("compare-val", "higher-val", "lower-val");
+      bars[j].classList.remove("compare-val", "higher-val", "lower-val");
+      isSorted = true;
+      for (let i = 0; i < n - 1; i++) {
+        if (array[i] > array[i + 1]) {
+          isSorted = false;
+          break;
+        }
+      }
+    }
+    this.checkSort();
+  }
 
   async checkSort() {
     const bars = document.getElementsByClassName("array-bar");

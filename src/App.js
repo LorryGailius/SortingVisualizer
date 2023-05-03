@@ -31,6 +31,10 @@ function App() {
         sortingVisualizerRef.current.selectionSort();
         break;
 
+      case 2:
+        sortingVisualizerRef.current.bozoSort();
+        break;
+
       default:
         break;
     }
@@ -79,6 +83,7 @@ function App() {
           >
             <MenuItem value={0}>Bubble Sort</MenuItem>
             <MenuItem value={1}>Selection Sort</MenuItem>
+            <MenuItem value={2}>Bozo Sort</MenuItem>
           </Select>
         </FormControl>
 
