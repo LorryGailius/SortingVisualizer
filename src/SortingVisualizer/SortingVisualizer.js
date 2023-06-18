@@ -49,6 +49,7 @@ export default class SortingVisualizer extends React.Component {
           <div className="array-bar"
             key={idx}
             style={{
+              // make height value in percent
               height: `${value}px`,
               width: `calc(100% / ${array.length} - 2px)`,
             }}>

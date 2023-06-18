@@ -106,6 +106,7 @@ function App() {
       </Toolbar>
 
       <SortingVisualizer
+        // Size is arraySize in percent
         size={arraySize}
         reset={reset}
         speed={speed}
